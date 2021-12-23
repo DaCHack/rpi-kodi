@@ -75,6 +75,7 @@ RUN packages="                                               \
     kodi-pvr-vuplus                                          \
     kodi-pvr-wmc                                             \
     kodi-pvr-zattoo                                          \
+    kodi-pvr-hts                                             \
     kodi-screensaver-biogenesis                              \
     kodi-screensaver-matrixtrails                            \
     kodi-screensaver-pyro                                    \
