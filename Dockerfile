@@ -32,7 +32,7 @@ RUN apt-get update                                                        && \
 # either install udev or make the required directory 
     sudo apt-get install uuid-dev                                         && \
 #    mkdir -p /etc/udev/rules.d
-    rm -rf /var/lib/apt/lists/*                                           
+#    rm -rf /var/lib/apt/lists/*                                           
 
 # besides kodi, we will install a few extra packages:
 #  - ca-certificates              allows Kodi to properly establish HTTPS connections
