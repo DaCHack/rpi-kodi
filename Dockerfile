@@ -24,13 +24,13 @@ FROM debian:bookworm-slim
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install the team-xbmc ppa
-RUN sudo apt update
-RUN sudo apt -y purge openssl
-RUN sudo apt -y --purge autoremove
-RUN sudo apt upgrade
+RUN apt update
+RUN apt -y purge openssl
+RUN apt -y --purge autoremove
+RUN apt upgrade
 # Bugfix for: installed kodi package post-installation script subprocess returned error exit status 1
 # either install udev or make the required directory 
-RUN sudo apt-get install uuid-dev
+RUN apt install uuid-dev
 #    mkdir -p /etc/udev/rules.d
 RUN rm -rf /var/lib/apt/lists/*                                           
 
