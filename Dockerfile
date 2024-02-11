@@ -24,15 +24,15 @@ FROM debian:bookworm-slim
 ARG DEBIAN_FRONTEND=noninteractive
 
 # install the team-xbmc ppa
-RUN apt-get update                                                        && \
-    apt-get -y purge openssl                                              && \
-    apt-get -y --purge autoremove                                         && \
-    apt-get dist-upgrade                                                  && \
+RUN apt-get update
+RUN apt-get -y purge openssl
+RUN apt-get -y --purge autoremove
+RUN apt-get dist-upgrade
 # Bugfix for: installed kodi package post-installation script subprocess returned error exit status 1
 # either install udev or make the required directory 
-    sudo apt-get install uuid-dev                                         && \
+RUN sudo apt-get install uuid-dev
 #    mkdir -p /etc/udev/rules.d
-#    rm -rf /var/lib/apt/lists/*                                           
+RUN rm -rf /var/lib/apt/lists/*                                           
 
 # besides kodi, we will install a few extra packages:
 #  - ca-certificates              allows Kodi to properly establish HTTPS connections
