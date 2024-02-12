@@ -90,7 +90,7 @@ RUN packages="                                               \
     apt install -y $packages                          
 
 # Add python for netflix plugin
-RUN apt install python3-pip python3-cryptography build-essential python3-all-dev            \
+RUN apt -y install python3-pip python3-cryptography build-essential python3-all-dev            \
                          python3-setuptools python3-wheel                && \
     pip install --break-system-packages pycryptodomex                                                               && \
     ln -s /usr/lib/python3/dist-packages/Crypto /usr/lib/python3/dist-packages/Cryptodome   && \
