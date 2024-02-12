@@ -30,8 +30,8 @@ RUN apt -y --purge autoremove
 RUN apt -y upgrade
 # Bugfix for: installed kodi package post-installation script subprocess returned error exit status 1
 # either install udev or make the required directory 
-RUN apt install uuid-dev
-#    mkdir -p /etc/udev/rules.d
+#RUN apt install uuid-dev
+RUN mkdir -p /etc/udev/rules.d
 RUN rm -rf /var/lib/apt/lists/*                                           
 
 # besides kodi, we will install a few extra packages:
