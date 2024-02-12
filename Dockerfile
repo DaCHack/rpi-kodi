@@ -27,7 +27,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt -y purge openssl
 RUN apt -y --purge autoremove
-RUN apt upgrade
+RUN apt -y upgrade
 # Bugfix for: installed kodi package post-installation script subprocess returned error exit status 1
 # either install udev or make the required directory 
 RUN apt install uuid-dev
@@ -86,15 +86,15 @@ RUN packages="                                               \
     libnss3                                                  \
     tzdata"                                               && \
                                                              \
-    apt-get update                                        && \
-    apt-get install -y $packages                          
+    apt update                                        && \
+    apt install -y $packages                          
 
 # Add python for netflix plugin
-RUN sudo apt-get install python3-pip python3-cryptography build-essential python3-all-dev            \
+RUN sudo apt install python3-pip python3-cryptography build-essential python3-all-dev            \
                          python3-setuptools python3-wheel                && \
     pip install --break-system-packages pycryptodomex                                                               && \
     ln -s /usr/lib/python3/dist-packages/Crypto /usr/lib/python3/dist-packages/Cryptodome   && \
-    apt-get -y --purge autoremove                                                           && \
+    apt -y --purge autoremove                                                           && \
     rm -rf /var/lib/apt/lists/*
 
 RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video kodi
