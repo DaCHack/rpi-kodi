@@ -1,14 +1,14 @@
-# rimago/rpi-kodi
+# dachack/rpi-kodi
 
-Dockerized [Kodi](https://kodi.tv/) with audio and video for the raspberry pi4.
+Dockerized [Kodi](https://kodi.tv/) with audio and video.
 
-![Kodi screenshot](https://kodi.tv/sites/default/files/page/field_image/about--devices.jpg "Kodi screenshot")
+Works on amd64 Fujitsu Futro S740
 
 ## Features
 
 * fully-functional [Kodi](https://kodi.tv/) installation in a [Docker](https://www.docker.com/) container
 * **audio** ([ALSA or PulseAudio](https://kodi.wiki/view/Linux_audio)) and **video**
-* simple, Raspbian image that adheres to the [official Kodi installation instructions](https://kodi.wiki/view/HOW-TO:Install_Kodi_for_Linux#Installing_Kodi_on_Ubuntu-based_distributions)
+* simple, Debian-slim image that adheres to the [official Kodi installation instructions](https://kodi.wiki/view/HOW-TO:Install_Kodi_for_Linux#Installing_Kodi_on_Ubuntu-based_distributions)
 * clean shutdown of Kodi when its container is terminated
 
 ## Host Prerequisites
@@ -25,26 +25,26 @@ The host system will need the following:
 * Create file docker-compose.yml
 
 ```yml
-version: "3.7"
 services:
   rpi-kodi:
-    image: rimago/rpi-kodi
+    image: dachack/rpi-kodi
     container_name: "kodi"
-    user: kodi
+#    user: 1000:1000
     network_mode: host
     restart: always
     privileged: true
     devices:
       - /dev/fb0:/dev/fb0
-      - /dev/vchiq:/dev/vchiq
+      - /dev/dri:/dev/dri
+      - /dev/snd:/dev/snd
     volumes:
-      - /home/pi/kodi/home:/home/kodi
+      - /home/administrator/kodi/home:/home/kodi
       - "/etc/timezone:/etc/timezone:ro"
       - "/etc/localtime:/etc/localtime:ro"
     tmpfs:
       - /tmp
-    environment:
-      - PULSE_SERVER=127.0.0.1
+#    environment:
+#      - PULSE_SERVER=127.0.0.1
 ```
 WARNING: it requires the --privileged flag which is risky. Please let me know if you have an idea how to remove it.
 
@@ -97,8 +97,8 @@ docker-compose exec  -u root kodi lircd
 ```
 
 ## Contributing
-This docker project is based on [erichough/kodi](https://github.com/ehough/docker-kodi).
+This docker project is based on [erichough/kodi](https://github.com/ehough/docker-kodi) and [rimago/rpi-kodi](https://github.com/rimago/rpi-kodi).
 
 Constructive criticism and contributions are welcome! Please 
-[submit an issue](https://github.com/rimago/rpi-kodi/issues/new) or 
-[pull request](https://github.com/rimago/rpi-kodi/compare).
+[submit an issue](https://github.com/dachack/rpi-kodi/issues/new) or 
+[pull request](https://github.com/dachack/rpi-kodi/compare).
