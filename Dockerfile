@@ -87,6 +87,7 @@ RUN packages="                                               \
     libnss3                                                  \
     tzdata                                                   \
     evtest                                                   \
+    nano                                                     \
     intel-media-va-driver"                                 && \
                                                              \
     apt update                                        && \
