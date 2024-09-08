@@ -84,7 +84,10 @@ RUN packages="                                               \
     locales                                                  \
     pulseaudio                                               \
     libnss3                                                  \
-    tzdata"                                               && \
+    tzdata                                                   \
+    intel-media-va-driver                                    \
+    intel-microcode                                          \
+    i965-va-driver"                                       && \
                                                              \
     apt update                                        && \
     apt install -y $packages                          
@@ -97,7 +100,7 @@ RUN apt -y install python3-pip python3-cryptography build-essential python3-all-
     apt -y --purge autoremove                                                           && \
     rm -rf /var/lib/apt/lists/*
 
-RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video kodi && usermod -a -G input kodi
+RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video kodi && usermod -a -G input kodi && usermod -a -G render kodi
 
 ADD /asound.conf /etc/asound.conf
 
