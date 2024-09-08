@@ -79,6 +79,7 @@ RUN packages="                                               \
     kodi-pvr-hts                                             \
     kodi-screensaver-biogenesis                              \
     kodi-screensaver-pyro                                    \
+    kodi-eventclients-common                                 \
     lirc                                                     \
     lirc-compat-remotes                                      \
     locales                                                  \
