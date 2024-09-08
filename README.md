@@ -1,4 +1,5 @@
 # dachack/rpi-kodi
+[![docker-hub Actions Status](https://github.com/dachack/rpi-kodi/workflows/docker-hub/badge.svg)](https://github.com/dachack/rpi-kodi/actions)
 
 Dockerized [Kodi](https://kodi.tv/) with audio and video.
 
