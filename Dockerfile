@@ -85,7 +85,7 @@ RUN packages="                                               \
     pulseaudio                                               \
     libnss3                                                  \
     tzdata                                                   \
-    intel-media-va-driver                                 && \
+    intel-media-va-driver"                                 && \
                                                              \
     apt update                                        && \
     apt install -y $packages                          
