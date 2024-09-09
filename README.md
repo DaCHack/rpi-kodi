@@ -19,7 +19,6 @@ The host system will need the following:
 1. **Linux** and [**Docker**](https://www.docker.com)
 
    This image should work on any Linux distribution with a functional Docker installation.
-   Caution: Audio currently works only as root. `user: kodi` results in no sound!
    
 3. **A connected display and speaker(s)**
        
@@ -30,7 +29,7 @@ services:
   rpi-kodi:
     image: dachack/rpi-kodi
     container_name: "kodi"
-#    user: kodi
+    user: kodi
     network_mode: host
     restart: unless-stopped
     privileged: true
@@ -38,7 +37,7 @@ services:
       - /dev/fb0:/dev/fb0
       - /dev/dri:/dev/dri
       - /dev/snd:/dev/snd
-      - /dev/input/event3:/dev/input/event3   #Add your USB mouse and keyboard based on "evtest" output
+      - /dev/input/event3:/dev/input/event3   #Add my USB mouse and keyboard based on "evtest" output
       - /dev/input/event4:/dev/input/event4
       - /dev/input/event5:/dev/input/event5
       - /dev/input/event6:/dev/input/event6
@@ -51,11 +50,10 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/dbus:/var/run/dbus
       - /run/udev:/run/udev
-      - /dev/null:/etc/asound.conf:ro
     tmpfs:
       - /tmp
-    environment:
-      - PULSE_SERVER=127.0.0.1
+#    environment:
+#      - PULSE_SERVER=127.0.0.1
 ```
 WARNING: it requires the --privileged flag which is risky. Please let me know if you have an idea how to remove it.
 
