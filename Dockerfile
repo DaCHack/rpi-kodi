@@ -102,9 +102,9 @@ RUN apt -y install python3-pip python3-cryptography build-essential python3-all-
     rm -rf /var/lib/apt/lists/*
 
 # WITH PULSEAUDIO
-#RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video,input,render,sgx,pulse-access kodi
+#RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video,input,render,sgx,audio,pulse-access kodi
 # WITHOUT PULSEAUDIO
-RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video,input,render,sgx kodi
+RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video,input,render,sgx,audio kodi
 
 ADD /asound.conf_alsa /etc/asound.conf
 
