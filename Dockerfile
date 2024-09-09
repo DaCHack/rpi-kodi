@@ -53,37 +53,36 @@ RUN packages="                                               \
     mesa-*                                                   \
     kodi                                                     \
     kodi-eventclients-kodi-send                              \
+    kodi-eventclients-common                                 \
     kodi-inputstream-adaptive                                \
     kodi-inputstream-rtmp                                    \
     kodi-peripheral-joystick                                 \
-    kodi-pvr-argustv                                         \
-    kodi-pvr-dvblink                                         \
-    kodi-pvr-dvbviewer                                       \
-    kodi-pvr-filmon                                          \
-    kodi-pvr-hdhomerun                                       \
+#    kodi-pvr-argustv                                         \
+#    kodi-pvr-dvblink                                         \
+#    kodi-pvr-dvbviewer                                       \
+#    kodi-pvr-filmon                                          \
+#    kodi-pvr-hdhomerun                                       \
     kodi-pvr-hts                                             \
-    kodi-pvr-iptvsimple                                      \
-    kodi-pvr-mediaportal-tvserver                            \
-    kodi-pvr-mythtv                                          \
-    kodi-pvr-nextpvr                                         \
-    kodi-pvr-njoy                                            \
-    kodi-pvr-pctv                                            \
-    kodi-pvr-sledovanitv-cz                                  \
-    kodi-pvr-stalker                                         \
-    kodi-pvr-teleboy                                         \
-    kodi-pvr-vbox                                            \
-    kodi-pvr-vdr-vnsi                                        \
-    kodi-pvr-vuplus                                          \
-    kodi-pvr-wmc                                             \
-    kodi-pvr-zattoo                                          \
-    kodi-pvr-hts                                             \
+#    kodi-pvr-iptvsimple                                      \
+#    kodi-pvr-mediaportal-tvserver                            \
+#    kodi-pvr-mythtv                                          \
+#    kodi-pvr-nextpvr                                         \
+#    kodi-pvr-njoy                                            \
+#    kodi-pvr-pctv                                            \
+#    kodi-pvr-sledovanitv-cz                                  \
+#    kodi-pvr-stalker                                         \
+#    kodi-pvr-teleboy                                         \
+#    kodi-pvr-vbox                                            \
+#    kodi-pvr-vdr-vnsi                                        \
+#    kodi-pvr-vuplus                                          \
+#    kodi-pvr-wmc                                             \
+#    kodi-pvr-zattoo                                          \
     kodi-screensaver-biogenesis                              \
     kodi-screensaver-pyro                                    \
-    kodi-eventclients-common                                 \
     lirc                                                     \
     lirc-compat-remotes                                      \
     locales                                                  \
-    pulseaudio                                               \
+#    pulseaudio                                               \
     libnss3                                                  \
     tzdata                                                   \
     evtest                                                   \
