@@ -1,5 +1,6 @@
 *
 !asound.conf
+!asound.conf_alsa
 !entrypoint.sh
 !wagnerch-buster-ppa.key
 !wagnerch-buster-ppa.list
