@@ -49,47 +49,48 @@ RUN rm -rf /var/lib/apt/lists/*
 #  - tzdata                       necessary for timezone selection
 RUN packages="                                               \
     fbset                                                         \
-    ca-certificates                                          \
-    mesa-*                                                   \
-    kodi                                                     \
-    kodi-eventclients-kodi-send                              \
-    kodi-eventclients-common                                 \
-    kodi-inputstream-adaptive                                \
-    kodi-inputstream-rtmp                                    \
-    kodi-peripheral-joystick                                 \
-#    kodi-pvr-argustv                                         \
-#    kodi-pvr-dvblink                                         \
-#    kodi-pvr-dvbviewer                                       \
-#    kodi-pvr-filmon                                          \
-#    kodi-pvr-hdhomerun                                       \
-    kodi-pvr-hts                                             \
-#    kodi-pvr-iptvsimple                                      \
-#    kodi-pvr-mediaportal-tvserver                            \
-#    kodi-pvr-mythtv                                          \
-#    kodi-pvr-nextpvr                                         \
-#    kodi-pvr-njoy                                            \
-#    kodi-pvr-pctv                                            \
-#    kodi-pvr-sledovanitv-cz                                  \
-#    kodi-pvr-stalker                                         \
-#    kodi-pvr-teleboy                                         \
-#    kodi-pvr-vbox                                            \
-#    kodi-pvr-vdr-vnsi                                        \
-#    kodi-pvr-vuplus                                          \
-#    kodi-pvr-wmc                                             \
-#    kodi-pvr-zattoo                                          \
-    kodi-screensaver-biogenesis                              \
-    kodi-screensaver-pyro                                    \
-    lirc                                                     \
-    lirc-compat-remotes                                      \
-    locales                                                  \
-#    pulseaudio                                               \
-    libnss3                                                  \
-    tzdata                                                   \
-    evtest                                                   \
-    nano                                                     \
+    ca-certificates                                           \
+    alsa-utils                                                \
+    mesa-*                                                    \
+    kodi                                                      \
+    kodi-eventclients-kodi-send                               \
+    kodi-eventclients-common                                  \
+    kodi-inputstream-adaptive                                 \
+    kodi-inputstream-rtmp                                     \
+    kodi-peripheral-joystick                                  \
+#    kodi-pvr-argustv                                          \
+#    kodi-pvr-dvblink                                          \ 
+#    kodi-pvr-dvbviewer                                        \
+#    kodi-pvr-filmon                                           \
+#    kodi-pvr-hdhomerun                                        \
+    kodi-pvr-hts                                              \
+#    kodi-pvr-iptvsimple                                       \
+#    kodi-pvr-mediaportal-tvserver                             \
+#    kodi-pvr-mythtv                                           \
+#    kodi-pvr-nextpvr                                          \
+#    kodi-pvr-njoy                                             \
+#    kodi-pvr-pctv                                             \
+#    kodi-pvr-sledovanitv-cz                                   \
+#    kodi-pvr-stalker                                          \
+#    kodi-pvr-teleboy                                          \
+#    kodi-pvr-vbox                                             \
+#    kodi-pvr-vdr-vnsi                                         \
+#    kodi-pvr-vuplus                                           \
+#    kodi-pvr-wmc                                              \
+#    kodi-pvr-zattoo                                           \
+    kodi-screensaver-biogenesis                               \
+    kodi-screensaver-pyro                                     \
+    lirc                                                      \
+    lirc-compat-remotes                                       \
+    locales                                                   \
+#    pulseaudio                                                \
+    libnss3                                                   \
+    tzdata                                                    \
+    evtest                                                    \
+    nano                                                      \
     intel-media-va-driver"                                 && \
-                                                             \
-    apt update                                        && \
+                                                              \
+    apt update                                             && \
     apt install -y $packages                          
 
 # Add python for netflix plugin
@@ -105,7 +106,7 @@ RUN apt -y install python3-pip python3-cryptography build-essential python3-all-
 # WITHOUT PULSEAUDIO
 RUN groupadd -g 9002 kodi && useradd -u 9002 -r -g kodi kodi && usermod -a -G video,input,render,sgx kodi
 
-ADD /asound.conf /etc/asound.conf
+ADD /asound.conf_alsa /etc/asound.conf
 
 # setup entry point
 COPY entrypoint.sh /usr/local/bin
