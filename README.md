@@ -57,7 +57,7 @@ services:
 ```
 WARNING: it requires the --privileged flag which is risky. Please let me know if you have an idea how to remove it.
 
-NOTE: This container is aimed to run in a Proxmox VM and thus selects the second sound card as the default device. Please edit asound.conf_alsa and rebuild the container or use asound.conf in the dockerfile instead!
+NOTE: This container is aimed to run in a Proxmox VM and thus selects the second sound card as the default device. If you run it natively, please edit asound.conf_alsa and rebuild the container or use asound.conf in the dockerfile instead!
 
  * If you want to have the home directory outside of the container (e.g. /home/pi/kodi/home:/home/kodi) you need to add the following user to the host:
 
