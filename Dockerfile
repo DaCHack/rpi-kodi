@@ -86,12 +86,13 @@ RUN packages="                                               \
 #    pulseaudio                                                \
     libnss3                                                   \
     tzdata                                                    \
-    evtest                                                    \
-    nano                                                      \
+#    evtest                                                    \
+#    nano                                                     \
     intel-media-va-driver"                                 && \
                                                               \
     apt update                                             && \
-    apt install -y $packages                          
+    apt install -y $packages                               && \
+    rm -rf /var/lib/apt/lists/*
 
 # Add python for netflix plugin
 RUN apt -y install python3-pip python3-cryptography build-essential python3-all-dev            \
